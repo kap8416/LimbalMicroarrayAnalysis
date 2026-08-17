@@ -1,0 +1,4 @@
+source: Lambert et al. 2018 human TF census (TF_names_v_1.01.txt)
+n_factors: 1639
+built: 2026-08-17 13:52:17.150916
+absent_manuscript_regulators: RB1, PTCH1, BMP4, FZD7, VIM, NF1

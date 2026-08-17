@@ -3,6 +3,15 @@
 <p align="center">
   <strong>Comparative systems-level transcriptomics of human limbal epithelial identity</strong><br>
   <em>A reproducible, auditable reanalysis of two public ocular-surface microarray datasets</em>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <img alt="R >= 4.3" src="https://img.shields.io/badge/R-%E2%89%A5%204.3-276DC3.svg">
+  <img alt="Python >= 3.10" src="https://img.shields.io/badge/Python-%E2%89%A5%203.10-3776AB.svg">
+  <img alt="Bioconductor >= 3.18" src="https://img.shields.io/badge/Bioconductor-%E2%89%A5%203.18-1a81c2.svg">
+  <img alt="Status: under revision" src="https://img.shields.io/badge/status-under%20revision-orange.svg">
+</p>
 
 ---
 
@@ -22,6 +31,13 @@ regulatory attractor**: a self-reinforcing network state anchored on FN1-centred
 extracellular-matrix signalling, which is destabilized once cells leave their
 native niche.
 
+> [!IMPORTANT]
+> **This repository is under active revision and the pipeline in `R/` is not yet
+> equivalent to the results in the submitted manuscript.** Three defects were found
+> in the original analysis and are corrected here; two of them change reported
+> numbers. See [Reproducibility status](#reproducibility-status) before reusing any
+> value from the manuscript. Full detail in [`docs/AUDIT.md`](docs/AUDIT.md) and
+> [`docs/ERRATA.md`](docs/ERRATA.md).
 
 ---
 
@@ -162,20 +178,61 @@ Publication-ready PDF (vector, TrueType-embedded) plus 600 dpi PNG in
 `figures/output/`. Style and palette are centralized in `figures/scripts/fig_style.py`
 and mirrored in `R/00_config.R`.
 
-| | Content | 
+| | Content | Status |
 |---|---|---|
-| Fig. 1 | Analytical pipeline | 
-| Fig. 2 | DEG burden + volcano panels | 
-| Fig. 3 | Set overlap + 32-gene core signature | 
-| Fig. 4 | GO-BP / KEGG dot plots |
-| Fig. 5 | C1 interactome, FN1 hub, module landscape | 
-| Fig. 6 | C2 circuit + C3 interactome | 
-| Fig. 7 | Regulatory attractor model | 
-| Fig. 8 | Master regulators + rewiring |
-| Suppl. 1 | PCA + sample correlation QC | |
+| Fig. 1 | Analytical pipeline | ✅ |
+| Fig. 2 | DEG burden + volcano panels | ✅ |
+| Fig. 3 | Set overlap + 32-gene core signature | ✅ |
+| Fig. 4 | GO-BP / KEGG dot plots | ⏳ awaiting enrichment tables |
+| Fig. 5 | C1 interactome, FN1 hub, module landscape | ⚠️ regenerate after the PPI fix |
+| Fig. 6 | C2 circuit + C3 interactome | ⚠️ regenerate after the PPI fix |
+| Fig. 7 | Regulatory attractor model | ✅ |
+| Fig. 8 | Master regulators + rewiring | ⏳ awaiting MRA tables |
+| Suppl. 1 | PCA + sample correlation QC | ⏳ awaiting the harmonized matrix |
 
+Scripts awaiting input exit with a message naming the missing file and the R step
+that produces it; they have been tested against fixtures of the expected schema.
+Legends are in [`docs/FIGURES.md`](docs/FIGURES.md).
 
+---
 
+## Reproducibility status
+
+An independent audit of the original analysis is recorded in
+[`docs/AUDIT.md`](docs/AUDIT.md). It separates checks that **passed** from design
+concerns and from code defects, and states explicitly what could not be verified.
+
+**Verified sound.** DEG calls match the declared thresholds exactly (0 discrepancies
+in 3,448 genes × 3 contrasts); the composite hub score equals the mean of its
+normalized components to 10⁻¹⁶; Benjamini–Hochberg adjustment reproduces
+independently; the C3 *p*-value histogram is well behaved, with no signature of
+over-correction. The published DEG counts, the 32-gene core signature, and the
+FN1/IL6/LAMB3 hub values all reproduce from the deposited tables.
+
+**Corrected here.**
+
+| # | Defect | Effect | Fix |
+|---|---|---|---|
+| [3.3](docs/AUDIT.md) | STRING query chunked at 1,500 genes; cross-chunk interactions never queried | C1 and C3 networks missing **12%** and **5%** of edges; all their topology metrics computed on incomplete graphs | local interactome; chunking now refused |
+| [3.4](docs/AUDIT.md) | `MCC` replaced by `degree²` when *n* > 500 | two of five composite terms were functions of degree, weighting it 2/5 not 1/5 | exact MCC, or the term is dropped and the omission recorded |
+| [3.5](docs/AUDIT.md) | MRA and rewiring run on 17 samples, retaining the excluded outlier | conjunctiva *n* = 4 in the regulatory layer, *n* = 3 in the DE layer | sample-set assertions in every layer |
+| [2.1](docs/ERRATA.md) | C2 top-DEG values are C1 fold changes (7 genes; CRTAC1 and GJB6 sign-reversed) | manuscript text | corrected values listed |
+| [2.2](docs/ERRATA.md) | C2 network reported as 10 edges | topology is 4 edges, derived and validated from the centrality vectors | `figures/scripts/reconstruct_c2_edges.py` |
+
+**Open.** The script that produced the harmonized matrix
+(`combined_expression_matrix_corrected_v2.csv`) has not been recovered, so the
+corneal concordance of *r* = 0.953, the PCA structure and the isoform collapse
+remain unverified against the original run. `R/02_integration.R` implements the step
+as the Methods describe it and can regenerate the matrix.
+
+Also open, and worth addressing in revision rather than defending: the three
+contrasts **share the same four limbal samples**, so they are not independent tests
+and the core signature's "stability across tissue contexts" is stronger than the
+design supports. `R/07_core_signature_null.R` provides a within-platform
+permutation null that respects that dependency.
+
+`provenance/` archives the original scripts unmodified, with a timestamp chain
+linking each to the tables it produced.
 
 ---
 
