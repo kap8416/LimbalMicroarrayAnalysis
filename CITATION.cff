@@ -1,0 +1,83 @@
+cff-version: 1.2.0
+title: >-
+  LimbalMicroarrayAnalysis: reproducible pipeline for comparative systems-level
+  transcriptomics of the human limbal epithelium
+message: >-
+  If you use this software, please cite both the software and the accompanying
+  article.
+type: software
+authors:
+  - given-names: Katia
+    family-names: Aviña-Padilla
+    affiliation: >-
+      Departamento de Biología Celular, Centro de Investigación y de Estudios
+      Avanzados del IPN, México City, Mexico
+  - given-names: Lesly Esmeralda
+    family-names: Cárdenas-López
+    affiliation: >-
+      Facultad de Biología, Universidad Autónoma de Sinaloa, Culiacán, Mexico
+  - given-names: Eliana
+    family-names: Valencia-Lozano
+    affiliation: >-
+      Laboratorio de Investigación Interdisciplinaria, Escuela Nacional de
+      Estudios Superiores Unidad León, UNAM, León, Mexico
+  - given-names: Federico
+    family-names: Castro-Muñozledo
+    affiliation: >-
+      Departamento de Biología Celular, Centro de Investigación y de Estudios
+      Avanzados del IPN, México City, Mexico
+repository-code: 'https://github.com/kap8416/LimbalMicroarrayAnalysis'
+abstract: >-
+  Reproducible pipeline for the comparative systems-level transcriptomic analysis
+  of human limbal epithelial identity. Two public ocular-surface microarray
+  datasets (GSE38190, GSE56421) are harmonized into a single gene-level matrix and
+  interrogated through three limbus-anchored contrasts and five analytical layers:
+  differential expression, functional over-representation, protein-protein
+  interaction topology, master regulator inference, and condition-specific
+  co-expression rewiring.
+keywords:
+  - transcriptomics
+  - limbal epithelium
+  - corneal epithelium
+  - gene regulatory networks
+  - master regulator analysis
+  - protein-protein interaction networks
+  - extracellular matrix
+  - stem cell niche
+  - reproducible research
+  - microarray meta-analysis
+license: MIT
+references:
+  - type: article
+    title: >-
+      Human limbal epithelial identity is maintained by a niche-dependent
+      regulatory attractor anchored on FN1
+    status: submitted
+    year: 2026
+    authors:
+      - given-names: Katia
+        family-names: Aviña-Padilla
+      - given-names: Lesly Esmeralda
+        family-names: Cárdenas-López
+      - given-names: Eliana
+        family-names: Valencia-Lozano
+      - given-names: Federico
+        family-names: Castro-Muñozledo
+  - type: database
+    title: >-
+      Gene expression profiling of human limbal, corneal and conjunctival
+      epithelium
+    notes: Primary dataset reanalysed here
+    identifiers:
+      - type: other
+        value: GSE38190
+        description: NCBI Gene Expression Omnibus accession
+  - type: database
+    title: >-
+      Gene expression profiling of cultured human limbal epithelial cells and
+      native cornea
+    notes: Primary dataset reanalysed here
+    identifiers:
+      - type: other
+        value: GSE56421
+        description: NCBI Gene Expression Omnibus accession

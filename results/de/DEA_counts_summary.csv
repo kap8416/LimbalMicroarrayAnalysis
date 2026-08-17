@@ -1,0 +1,4 @@
+contrast,label,lfc_cut,fdr_cut,up,down,ns,total
+C1,Limbus vs cornea,1,0.05,1865,934,21203,24002
+C2,Limbus vs conjunctiva,0.5,0.05,112,36,23854,24002
+C3,Limbus vs cultured limbal epithelial cells,1,0.05,1009,548,22445,24002
