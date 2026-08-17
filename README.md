@@ -3,15 +3,6 @@
 <p align="center">
   <strong>Comparative systems-level transcriptomics of human limbal epithelial identity</strong><br>
   <em>A reproducible, auditable reanalysis of two public ocular-surface microarray datasets</em>
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-  <img alt="R >= 4.3" src="https://img.shields.io/badge/R-%E2%89%A5%204.3-276DC3.svg">
-  <img alt="Python >= 3.10" src="https://img.shields.io/badge/Python-%E2%89%A5%203.10-3776AB.svg">
-  <img alt="Bioconductor >= 3.18" src="https://img.shields.io/badge/Bioconductor-%E2%89%A5%203.18-1a81c2.svg">
-  <img alt="Status: under revision" src="https://img.shields.io/badge/status-under%20revision-orange.svg">
-</p>
 
 ---
 
