@@ -1,6 +1,0 @@
-gene,degree,degree_norm,betweenness,closeness,eigenvector,clustering_coeff,module,MCC,logFC,direction,module_sz,degree_n,betweenness_n,closeness_n,eigenvector_n,MCC_n,hub_score,hub_components,hub_rank,is_hub
-LAMB3,3,0.75,0.8333333333333334,0.8,0.9999999999999999,0,1,3,0.6580879119732437,Up,3,1,1,1,1,1,1,degree+betweenness+closeness+eigenvector+MCC,1,TRUE
-ITGA10,2,0.5,0.5,0.6666666666666666,0.7653668647301792,0,2,2,2.679640852310234,Up,2,0.5,0.6,0.6249999999999999,0.5994561836898287,0.5,0.5648912367379657,degree+betweenness+closeness+eigenvector+MCC,2,TRUE
-MMP7,1,0.25,0,0.5,0.541196100146197,0,1,1,-2.1228278134511713,Down,3,0,0,0.15625000000000003,0.21677275132473944,0,0.0746045502649479,degree+betweenness+closeness+eigenvector+MCC,3,TRUE
-COL17A1,1,0.25,0,0.5,0.5411961001461969,0,1,1,1.4074391479461197,Up,3,0,0,0.15625000000000003,0.21677275132473925,0,0.07460455026494786,degree+betweenness+closeness+eigenvector+MCC,4,TRUE
-THBS4,1,0.25,0,0.4444444444444444,0.414213562373095,0,2,1,2.836502185835295,Up,2,0,0,0,0,0,0,degree+betweenness+closeness+eigenvector+MCC,5,TRUE
