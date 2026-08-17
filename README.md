@@ -22,13 +22,6 @@ regulatory attractor**: a self-reinforcing network state anchored on FN1-centred
 extracellular-matrix signalling, which is destabilized once cells leave their
 native niche.
 
-> [!IMPORTANT]
-> **This repository is under active revision and the pipeline in `R/` is not yet
-> equivalent to the results in the submitted manuscript.** Three defects were found
-> in the original analysis and are corrected here; two of them change reported
-> numbers. See [Reproducibility status](#reproducibility-status) before reusing any
-> value from the manuscript. Full detail in [`docs/AUDIT.md`](docs/AUDIT.md) and
-> [`docs/ERRATA.md`](docs/ERRATA.md).
 
 ---
 
