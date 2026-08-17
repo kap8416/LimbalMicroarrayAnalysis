@@ -1,0 +1,19 @@
+Permutation null for the core limbal signature
+==============================================
+Permutations requested / valid : 1000 / 1000
+Permutation scheme             : group labels shuffled within platform
+Statistic                      : genes upregulated in all three contrasts
+Thresholds                     : C1 1.0, C2 0.5, C3 1.0; FDR <= 0.05
+
+Observed                       : 32
+Null mean (SD)                 : 0.04 (0.63)
+Null median [IQR]              : 0 [0-0]
+Null 95th percentile           : 0
+Null max                       : 19
+Permutations >= observed       : 0
+Empirical p                    : 0.000999 (upper bound)
+
+Interpretation note: this null preserves the fact that all three contrasts
+share the same limbal samples. It therefore tests whether the three-way
+intersection is larger than expected given that dependency, which an
+independence-based (hypergeometric) calculation does not.

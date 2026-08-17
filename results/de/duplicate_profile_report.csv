@@ -1,0 +1,3 @@
+level,n_features,n_unique_profiles,n_duplicated,pct_duplicated
+transcript,45378,18424,37522,82.7
+gene,24002,18362,9538,39.7

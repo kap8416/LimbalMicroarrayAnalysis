@@ -1,0 +1,5 @@
+from,to,same_module
+LAMB3,ITGA10,False
+LAMB3,MMP7,True
+LAMB3,COL17A1,True
+ITGA10,THBS4,True

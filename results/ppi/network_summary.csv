@@ -1,0 +1,4 @@
+contrast,label,n_degs,n_nodes,n_edges,n_nodes_before_lcc,n_edges_before_lcc,n_modules,n_up_nodes,pct_up,modularity,top_hub,hub_components,mcc_exact,string_source,string_version,score_min,retrieved_on
+C1,Limbus vs cornea,2799,1285,4939,1387,5004,21,921,71.7,0.649,FN1,degree+betweenness+closeness+eigenvector+MCC,TRUE,local,12.0,0.7,2026-08-17
+C2,Limbus vs conjunctiva,148,5,4,28,20,2,4,80,0.219,LAMB3,degree+betweenness+closeness+eigenvector+MCC,TRUE,local,12.0,0.7,2026-08-17
+C3,Limbus vs cultured limbal epithelial cells,1557,613,1957,715,2047,17,402,65.6,0.658,COL1A1,degree+betweenness+closeness+eigenvector+MCC,TRUE,local,12.0,0.7,2026-08-17
